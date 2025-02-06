@@ -1,16 +1,18 @@
 #include <Arduino.h>
-
+// Définir le taux de communication du port série
+#define BAUDRATE 115200
 // put function declarations here:
 int myFunction(int, int);
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(BAUDRATE);
+  Serial.println("Bonjour, le module fonctionne correctement !");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Ajouter ici le code qui doit s'exécuter en boucle
 }
+
 
 // put function definitions here:
 int myFunction(int x, int y) {
