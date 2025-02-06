@@ -1,20 +1,27 @@
-#include <Arduino.h>
-// Définir le taux de communication du port série
-#define BAUDRATE 115200
-// put function declarations here:
-int myFunction(int, int);
-
-void setup() {
-  Serial.begin(BAUDRATE);
-  Serial.println("Bonjour, le module fonctionne correctement !");
+/**
+* Blink
+*
+* Turns on an LED on for one second,
+* then off for one second, repeatedly.
+*/
+#include "Arduino.h"
+// Set LED_BUILTIN if it is not defined by Arduino framework
+// #define LED_BUILTIN 13
+void setup()
+{
+// initialize LED digital pin as an output.
+pinMode(LED_BUILTIN, OUTPUT);
+ Serial.begin(115200);
+Serial.println("Bonjour, le module fonctionne correctement !");
 }
-
-void loop() {
-  // Ajouter ici le code qui doit s'exécuter en boucle
-}
-
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
+// turn the LED on (HIGH is the voltage level)
+digitalWrite(LED_BUILTIN, HIGH);
+// wait for a second
+delay(1000);
+// turn the LED off by making the voltage LOW
+digitalWrite(LED_BUILTIN, LOW);
+// wait for a second
+delay(1000);
 }
